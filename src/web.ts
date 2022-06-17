@@ -5,8 +5,8 @@ import type { LaunchNavigatorPlugin } from './definitions';
 export class LaunchNavigatorWeb
   extends WebPlugin
   implements LaunchNavigatorPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  navigate(options: { latitude: number; longitude: number }): Promise<void> {
+    console.log(options);
+    return Promise.resolve(undefined);
   }
 }

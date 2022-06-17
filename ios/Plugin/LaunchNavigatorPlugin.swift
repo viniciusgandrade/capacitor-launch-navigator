@@ -7,12 +7,9 @@ import Capacitor
  */
 @objc(LaunchNavigatorPlugin)
 public class LaunchNavigatorPlugin: CAPPlugin {
-    private let implementation = LaunchNavigator()
-
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func navigate(_ call: CAPPluginCall) {
+        let latitude = call.getDouble("latitude") ?? 0.0
+        let longitude = call.getDouble("longitude") ?? 0.0
+        call.resolve()
     }
 }

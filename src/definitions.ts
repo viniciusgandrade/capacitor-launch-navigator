@@ -1,3 +1,3 @@
 export interface LaunchNavigatorPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  navigate(options: { latitude: number, longitude: number }): Promise<void>;
 }
